@@ -1,0 +1,22 @@
+header {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+
+  nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+
+    a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+
+      &.active {
+        text-decoration: underline;
+      }
+    }
+  }
+}
