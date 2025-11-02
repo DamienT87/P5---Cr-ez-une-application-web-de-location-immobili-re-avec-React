@@ -1,4 +1,14 @@
-body{
-    font-family: 'Montserrat', sans-serif;
-    margin: 2rem;
+@use "./_variables.scss";
+@use "./_mixins.scss";
+@use "./_layout.scss";
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
+  color: #222;
+  margin: 0;
+}
+
+h1, h2, h3, p {
+  margin: 0;
 }

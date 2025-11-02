@@ -1,0 +1,6 @@
+@use "./mixins" as *;
+
+// Conteneur global
+.container {
+  @include container(1240px);
+}
