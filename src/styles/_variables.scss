@@ -1,17 +1,17 @@
-//Couleurs principales
 $color-primary: #ff6060;
-$color-light: #ffffff;
 $color-dark: #000000;
+$color-light: #ffffff;
+$color-muted: #f6f6f6;
 
-//Espacements
+$radius-lg: 25px;
+$radius-md: 10px;
+
 $space-4: 16px;
+$space-5: 25px;
 $space-6: 32px;
+$space-8: 48px;
 
-//Border radius
-$radius-md: 8px;
-$radius-lg: 16px;
 
-//Taille Responsive
 $breakpoints: (
   "sm": 480px,
   "md": 768px,

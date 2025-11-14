@@ -1,14 +1,38 @@
-@use "./_variables.scss";
-@use "./_mixins.scss";
-@use "./_layout.scss";
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./layout" as *;
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
 
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: #fff;
   color: #222;
-  margin: 0;
+  margin: 20px 20px 0 20px;
+  margin-inline: auto;
 }
+
+main { 
+  flex: 1;
+}
+
 
 h1, h2, h3, p {
   margin: 0;
+}
+
+.home-grid {
+  background: $color-muted;
+  border-radius: $radius-lg;
+  padding: $space-6;
+  margin-block: $space-6;
+
+  @include mq("md") {
+    padding: $space-8;
+    margin-block: $space-8;
+  }
 }

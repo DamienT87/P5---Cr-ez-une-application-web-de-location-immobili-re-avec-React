@@ -1,6 +1,27 @@
 @use "./mixins" as *;
+@use "./variables" as *;
 
 // Conteneur global
 .container {
   @include container(1240px);
+}
+
+//Grille des logements
+.grid {
+
+  display: grid;
+  gap: $space-6;
+
+  &.cards{
+    grid-template-columns: repeat 1fr;
+    
+    @include mq("md"){
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mq("lg"){
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
 }

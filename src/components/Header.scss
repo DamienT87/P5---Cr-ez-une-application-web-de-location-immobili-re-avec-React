@@ -1,27 +1,36 @@
-header {
-    display: flex;
-    justify-content: space-between;
-    
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
 
-    .logo {    
-        img {
-            height: 40px;
-        }
+.site-header {
+    margin-top: $space-6;
+    margin-bottom: $space-6;
+
+    .header__inner {
+        @include container(1240px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo img { 
+        height: 68px;
     }
 
     nav ul {
         display: flex;
-        gap: 2rem;
+        gap: $space-6;
         list-style: none;
-        padding: 0;
+        margin: 0; padding: 0;
 
         a {
             text-decoration: none;
-            color: #000;
+            color: $color-dark;
             font-weight: 500;
 
             &.active {
                 text-decoration: underline;
+                text-underline-offset: 4px;
+                color: $color-dark;
             }
         }
     }

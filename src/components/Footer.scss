@@ -1,0 +1,26 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.site-footer {
+    background: $color-dark;
+    color: $color-light;
+    padding: $space-8 0 $space-4 0;
+
+    .footer__inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: $space-6;
+    }
+
+    .footer__logo {
+        height: 40px;
+    }
+
+    .footer__copy {
+        margin: 0;
+        font-size: 0.875rem;
+        opacity: 0.9;
+    }
+}

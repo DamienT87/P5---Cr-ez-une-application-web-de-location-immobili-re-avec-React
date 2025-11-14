@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Header from "./components/Header"
+import Footer from "./components/Footer"
 import AppRouter from "./router/index.jsx";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div>
       <Header />
       <AppRouter />
+      <Footer />
     </div>
   )
 }
