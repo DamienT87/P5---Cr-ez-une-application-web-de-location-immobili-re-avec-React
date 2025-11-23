@@ -2,6 +2,10 @@ import { useParams, Navigate } from "react-router-dom";
 import logements from "../data/logements.json";
 import NotFound from "./NotFound";
 import Carrousel from "../components/Carrousel";
+import Collapse from "../components/Collapse";
+import starFull from "../assets/images/star_full.svg";
+import starEmpty from "../assets/images/star_empty.svg";
+import "./Logement.scss";
 
 export default function Logement(){
   //Récupération de l'id du logement
@@ -30,15 +34,15 @@ export default function Logement(){
         </section>
 
         {/* En-tête : titre location tags et notes*/}
-        <section className="logement__header" style={{ display: "grid", gap: 16, marginTop: 24 }}>
+        <section className="logement__header">
           <div>
-            <h1 style={{ margin: 0 }}>{title}</h1>
-            <p style={{ margin : "8px 0 0" }}>{location}</p>
+            <h1 className="logement__title">{title}</h1>
+            <p className="logement__location">{location}</p>
 
             { /* Tags */ }
-            <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginTop: 12}}>
+            <div className="logement__tags">
               {tags.map((tag) => (
-                <span key={tag} style={{ background: "#FF6060", color: "#fff", borderRadius: 8, padding: "6px 12px", fontSize: 12, fontWeight: 600}}>
+                <span key={tag} className="logement__tag">
                   {tag}
                 </span>
               ))}
@@ -46,49 +50,47 @@ export default function Logement(){
           </div>
 
           {/* Hebergeur et note*/}
-          <div style={{ display: "flex", alignItems: "center", gap: 16, justifySelf:"end"}}>
+          <div className="logement__meta">
             {/* Hebergeur */}
             {host && (
-              <div style={{ display: "flex", alignItems: "center", gap: 8}}>
-                <span style={{ maxWidth: 120, textAlign: "right", fontWeight: 600, lineHeight: 1.2}}>
+              <div className="logement__host">
+                <span className="logement__host-name">
                   {host.name}
                 </span>
                 {host.picture && (
-                  <img src={host.picture} alt={host.name} style={{ width: 48, height: 48, borderRadius: "50%", objectFit: "cover" }}/>
+                  <img src={host.picture} alt={host.name} className="logement__host-avatar"/>
                 )}
               </div>
             )}
 
             {/* Notes */}
-            <div aria-label={`Note ${rating}/5`}>
+            <div className="logement__rating" aria-label={`Note ${rating}/5`}>
               {Array.from({ length: 5 }).map((_, i) => (
-                <span key={i} style={{ fontSize: 20, color: i < Number(rating) ? "#FF6060" : "#E3E3E3"}}>★</span>
+                <img key={i} src={i < rating ? starFull : starEmpty} 
+                alt={i < rating ? "Etoiles pleine" : "Etoile vide"} 
+                className="rating__star"
+                />
               ))}
             </div>
           </div>
         </section>
 
         {/* Description & Equipements du logement */}
-        <section className="logements__collapses" style={{ display: "grid", gap: 16, marginTop: 24}}>
-          <div style={{ background: "#F6F6F6", borderRadius: 10, padding: 16}}>
-            <strong>Description</strong>
-            <p style={{marginTop : 8}}>{description}</p>
-          </div>
+        <section className="logement__collapses">
+          <Collapse title="Description">
+            <p>{description}</p>
+          </Collapse>
 
-          <div style={{ background: "#F6F6F6", borderRadius: 10, padding: 16}}>
-            <strong>Équipments</strong>
+          <Collapse title="Equipements">
             <ul style={{marginTop: 8, paddingLeft: 18}}>
               {equipments.map((equipement) => <li key={equipement}>{equipement}</li>)}
             </ul>
-          </div>
+          </Collapse>
         </section>
       </main>
     )
+
   }else{
       return <NotFound />;
   }
-  
-
-
-
 }

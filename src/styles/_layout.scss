@@ -4,6 +4,9 @@
 // Conteneur global
 .container {
   @include container(1240px);
+
+  padding-inline: $space-4;
+
 }
 
 //Grille des logements
@@ -23,5 +26,4 @@
       grid-template-columns: repeat(3, 1fr);
     }
   }
-
 }

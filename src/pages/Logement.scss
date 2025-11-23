@@ -1,0 +1,147 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+//Bloc principal
+.logement{
+    display: grid;
+    gap: $space-6;
+    margin-block: $space-6;
+
+    @include mq("md"){
+        gap: $space-8;
+        margin-block: $space-8;
+    }
+
+    &__header{
+        display: grid;
+        gap: $space-4;
+
+        @include mq("md"){
+            grid-template-columns: 1fr auto;
+            align-items: start;
+        }
+    }
+
+    &__title{
+        margin: 0;
+        font-size: clamp(20px, 3vw, 36px);
+        font-weight: 500;
+        color: $color-primary;
+        width: 70%;
+    }
+
+    &__location{
+        margin: 0 0 0 0;
+        color: #333;
+        font-weight: 500;
+    }
+
+    &__tags{
+        display: flex;
+        gap: $space-4;
+        flex-wrap: wrap;
+        margin-top: $space-4;
+    }
+
+    &__tag{
+        background: $color-primary;
+        color: $color-light;
+        border-radius: 8px;
+        padding: 6px 12px;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    &__meta{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+        gap: $space-6;
+        height: 100%;
+
+        @include mq("md"){
+            flex-direction: column;
+            align-items: flex-end;
+            justify-self: end;
+            gap: $space-4;
+        }
+    }
+
+    &__host{
+        display: flex;
+        align-items: center;
+        gap: $space-4;
+
+        &-name{
+            max-width: 70px;
+            text-align: right;
+            font-weight: 600;
+            line-height: 1.2;
+            color: $color-primary;
+
+            display: block;  
+            overflow: hidden;
+            word-wrap: break-word;
+            word-break: break-word;
+            hyphens: auto;
+        }
+
+        &-avatar{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    &__rating{
+        display: flex;
+        gap: 4px;
+        align-items: center;
+
+        &__star{
+            width: 20px;
+            height: 20px;
+
+            @include mq("md"){
+                width: 24px;
+                height: 24px
+            }
+        }
+    }
+
+    &__collapses{
+        display: grid;
+        gap: $space-4;
+        margin-top: $space-6;
+
+        @include mq("md"){
+            display: flex;
+            gap: $space-6;
+            align-items: flex-start;
+        }
+    }
+
+    &__collapses > .collapse {
+        @include mq("md"){
+            flex: 1 1 0;
+        }
+    }
+
+
+    &__panel{
+        background: #F6F6F6;
+        border-radius: $radius-md;
+        padding: $space-4;
+
+        &-title{
+            font-weight: 700;
+        }
+
+        &-body{
+            margin-top: $space-4;
+        }
+    }
+}

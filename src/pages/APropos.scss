@@ -1,0 +1,22 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.apropos{
+    margin-block: $space-6;
+
+    @include mq("md"){
+        margin-block: $space-8;
+    }
+
+    &__collapses{
+        display: flex;
+        flex-direction: column;
+        gap: $space-4;
+        margin-top: $space-6;
+
+        @include mq("md"){
+            gap: $space-6;
+            margin-inline: auto;
+        }
+    }
+}

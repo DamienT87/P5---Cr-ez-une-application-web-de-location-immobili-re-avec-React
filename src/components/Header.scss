@@ -13,7 +13,11 @@
     }
 
     .logo img { 
-        height: 68px;
+        height: 45px;
+
+        @include mq("md"){
+            height: 68px;
+        }
     }
 
     nav ul {

@@ -2,13 +2,18 @@ import { useState } from 'react'
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import AppRouter from "./router/index.jsx";
+import "./styles/main.scss";
 
 function App() {
 
   return (
-    <div>
+    <div className="site">
       <Header />
-      <AppRouter />
+
+      <div className="site__content">
+        <AppRouter />
+      </div>
+      
       <Footer />
     </div>
   )

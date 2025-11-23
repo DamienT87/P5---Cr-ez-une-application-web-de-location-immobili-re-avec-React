@@ -1,0 +1,36 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.notfound{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $space-8;
+    text-align: center;
+
+    &__code{
+        font-size: clamp(96px, 20vw, 200px);
+        font-weight: 700;
+        color: $color-primary;
+        margin: 0;
+    }
+
+    &__message{
+        font-size: clamp(14px, 3vw, 24px);
+        color: $color-primary;
+        font-weight: 500;
+        margin: 0
+    }
+
+    &__link{
+        color: $color-dark;
+        font-size: 14px;
+        text-decoration: underline;
+
+        &:hover{
+            opacity: 0.8;
+        }
+    }
+}
