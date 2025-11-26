@@ -67,7 +67,7 @@ export default function Logement(){
             <div className="logement__rating" aria-label={`Note ${rating}/5`}>
               {Array.from({ length: 5 }).map((_, i) => (
                 <img key={i} src={i < rating ? starFull : starEmpty} 
-                alt={i < rating ? "Etoiles pleine" : "Etoile vide"} 
+                alt={i < rating ? "Etoile pleine" : "Etoile vide"} 
                 className="rating__star"
                 />
               ))}
